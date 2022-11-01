@@ -449,6 +449,28 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9b919933a397b79c37e33b77bb2aa3dc8eb6e165ad809e58ff75bc7db2e34574"
 
 [[package]]
+name = "gportal-integrations"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "api",
+ "chrono",
+ "chrono-tz",
+ "dotenv",
+ "flexi_logger",
+ "influxdb",
+ "log",
+ "oauth2",
+ "openssl",
+ "reqwest",
+ "serde",
+ "serde_json",
+ "tokio",
+ "totp-rs",
+ "webhook",
+]
+
+[[package]]
 name = "h2"
 version = "0.3.15"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -658,27 +680,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "integrations"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "api",
- "chrono",
- "chrono-tz",
- "dotenv",
- "flexi_logger",
- "influxdb",
- "log",
- "oauth2",
- "reqwest",
- "serde",
- "serde_json",
- "tokio",
- "totp-rs",
- "webhook",
-]
-
-[[package]]
 name = "ipnet"
 version = "2.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -859,6 +860,15 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ff011a302c396a5197692431fc1948019154afc178baf7d8e37367442a4601cf"
 
 [[package]]
+name = "openssl-src"
+version = "111.22.0+1.1.1q"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "8f31f0d509d1c1ae9cada2f9539ff8f37933831fd5098879e482aa687d659853"
+dependencies = [
+ "cc",
+]
+
+[[package]]
 name = "openssl-sys"
 version = "0.9.77"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -867,6 +877,7 @@ dependencies = [
  "autocfg",
  "cc",
  "libc",
+ "openssl-src",
  "pkg-config",
  "vcpkg",
 ]

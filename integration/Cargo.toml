@@ -1,5 +1,5 @@
 [package]
-name = "integrations"
+name = "gportal-integrations"
 version = "0.1.0"
 authors = ["Razer2015 <razer138@gmail.com>"]
 description = "Integrations between GPortal and Discord."
@@ -26,3 +26,6 @@ log = "0.4"
 flexi_logger = { version = "0.17", features = ["colors"] }
 
 api = { path = "../api" }
+
+[target.'cfg(unix)'.dependencies]
+openssl = { version = "0.10", features = ["vendored"] }
