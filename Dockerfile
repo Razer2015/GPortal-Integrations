@@ -13,6 +13,8 @@ RUN tar -xf gportal-integrations.tar.gz
 
 FROM debian:bullseye-slim
 
+RUN apt-get update && apt-get install -y ca-certificates
+
 WORKDIR /app
 COPY --from=downloader /home/curl_user/gportal-integrations .
 CMD ["./gportal-integrations"]
