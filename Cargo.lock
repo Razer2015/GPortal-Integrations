@@ -449,6 +449,28 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9b919933a397b79c37e33b77bb2aa3dc8eb6e165ad809e58ff75bc7db2e34574"
 
 [[package]]
+name = "gportal-integrations"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "api",
+ "chrono",
+ "chrono-tz",
+ "dotenv",
+ "flexi_logger",
+ "influxdb",
+ "log",
+ "oauth2",
+ "openssl",
+ "reqwest",
+ "serde",
+ "serde_json",
+ "tokio",
+ "totp-rs",
+ "webhook",
+]
+
+[[package]]
 name = "h2"
 version = "0.3.15"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -655,28 +677,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7a5bbe824c507c5da5956355e86a746d82e0e1464f65d862cc5e71da70e94b2c"
 dependencies = [
  "cfg-if",
-]
-
-[[package]]
-name = "integrations"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "api",
- "chrono",
- "chrono-tz",
- "dotenv",
- "flexi_logger",
- "influxdb",
- "log",
- "oauth2",
- "openssl",
- "reqwest",
- "serde",
- "serde_json",
- "tokio",
- "totp-rs",
- "webhook",
 ]
 
 [[package]]

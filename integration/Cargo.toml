@@ -1,5 +1,5 @@
 [package]
-name = "integrations"
+name = "gportal-integrations"
 version = "0.1.0"
 authors = ["Razer2015 <razer138@gmail.com>"]
 description = "Integrations between GPortal and Discord."
