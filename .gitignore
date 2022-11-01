@@ -1,6 +1,8 @@
 /logger/target
 /api/target
 /target
+/data
+/logs
 .env*
 docker-compose.*.yml
 integration/donations_last_fetch.txt

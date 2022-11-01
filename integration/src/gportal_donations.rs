@@ -3,7 +3,7 @@ use std::fs::{self};
 
 use crate::{gportal_auth::GPortalAuth, discord};
 
-const CONFIG_PATH: &str = r#"donations_last_fetch.txt"#;
+const CONFIG_PATH: &str = r#"./data/donations_last_fetch.txt"#;
 
 pub struct GPortalDonations {
     auth: GPortalAuth,
@@ -63,7 +63,15 @@ impl GPortalDonations {
         Ok(())
     }
 
+    fn ensure_datadir_exists() -> Result<(), anyhow::Error> {
+        if let Some(p) = std::path::Path::new(&CONFIG_PATH).parent() { fs::create_dir_all(p)? };
+
+        Ok(())
+    }
+
     fn get_last_fetch() -> Result<Option<DateTime<Utc>>, anyhow::Error> {
+        GPortalDonations::ensure_datadir_exists()?;
+
         let content: String = fs::read_to_string(CONFIG_PATH)?.parse()?;
 
         let result = content.parse::<DateTime<Utc>>();
@@ -75,6 +83,8 @@ impl GPortalDonations {
     }
 
     fn save_last_fetch(&self) -> Result<(), anyhow::Error> {
+        GPortalDonations::ensure_datadir_exists()?;
+
         if self.last_fetch.is_none() {
             return Ok(());
         }
